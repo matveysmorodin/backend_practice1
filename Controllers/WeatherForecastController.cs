@@ -15,11 +15,13 @@ namespace web_1try.Controllers
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly TimeClientNow _timeClientNow;
         private readonly EnumerationOfDisceplines _disceplinesEnum;
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, TimeClientNow timeClientNow, EnumerationOfDisceplines disceplinesEnum)
+        private readonly HelloWorld _helloWorld;
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, TimeClientNow timeClientNow, EnumerationOfDisceplines disceplinesEnum, HelloWorld helloWorld)
         {
             _logger = logger;
             _timeClientNow = timeClientNow;
             _disceplinesEnum = disceplinesEnum;
+            _helloWorld = helloWorld;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
@@ -46,6 +48,13 @@ namespace web_1try.Controllers
         {
             _logger.LogInformation("EnumerationOfDisceplines вызван");
             return _disceplinesEnum.DisceplinesEnumerate();
+        }
+        
+        [HttpGet]
+        public string HelloWorld()
+        {
+            _logger.LogInformation("HelloWorld вызван");
+            return _helloWorld.SayHello();
         }
     }
 }
