@@ -33,3 +33,4 @@ C:\Users\t3400\source\repos\web-1try\obj\Debug\net8.0\refint\web-1try.dll
 C:\Users\t3400\source\repos\web-1try\obj\Debug\net8.0\web-1try.pdb
 C:\Users\t3400\source\repos\web-1try\obj\Debug\net8.0\web-1try.genruntimeconfig.cache
 C:\Users\t3400\source\repos\web-1try\obj\Debug\net8.0\ref\web-1try.dll
+C:\Users\t3400\source\repos\web-1try\obj\Debug\net8.0\web-1try.sourcelink.json

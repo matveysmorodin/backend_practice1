@@ -14,11 +14,12 @@ namespace web_1try.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly TimeClientNow _timeClientNow;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, TimeClientNow timeClientNow)
+        private readonly EnumerationOfDisceplines _disceplinesEnum;
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, TimeClientNow timeClientNow, EnumerationOfDisceplines disceplinesEnum)
         {
             _logger = logger;
             _timeClientNow = timeClientNow;
+            _disceplinesEnum = disceplinesEnum;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
@@ -38,6 +39,13 @@ namespace web_1try.Controllers
         {
             _logger.LogInformation("ClientTime вызван");
             return _timeClientNow.PrintTime();
+        }
+
+        [HttpGet]
+        public string Disceplines()
+        {
+            _logger.LogInformation("EnumerationOfDisceplines вызван");
+            return _disceplinesEnum.DisceplinesEnumerate();
         }
     }
 }
